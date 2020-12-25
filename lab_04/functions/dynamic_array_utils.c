@@ -15,7 +15,7 @@ int allocate_memory(array_d *const array)
 		array->data = 0;
 		array->mem_size = 1;
 	}
-	void **temp = (void **)realloc(array->data, array->mem_size * 2 * sizeof(void *));
+	void **temp = (void **) realloc(array->data, array->mem_size * 2 * sizeof(void *));
 	if (!temp)
 		return ALLOCATION_ERROR;
 	array->data = temp;

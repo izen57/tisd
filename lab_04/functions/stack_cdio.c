@@ -27,19 +27,19 @@ node_t *push_st_l(node_t *const ps)
 {
 	if (!ps)
 	{
-		node_t *new_ps = (node_t *)malloc(sizeof(node_t));
-		new_ps->value = (void *)new_ps;
+		node_t *new_ps = (node_t *) malloc(sizeof(node_t));
+		new_ps->value = (void *) new_ps;
 		new_ps->number = 0;
 		new_ps->next = NULL;
 		return new_ps;
 	}
 	if (ps->number >= STACK_SIZE - 1)
 		return NULL;
-	node_t *new_ps = (node_t *)malloc(sizeof(node_t));
+	node_t *new_ps = (node_t *) malloc(sizeof(node_t));
 	if (!new_ps)
 		return NULL;
 	new_ps->next = ps;
-	new_ps->value = (void *)new_ps;
+	new_ps->value = (void *) new_ps;
 	new_ps->number = ps->number + 1;
 	return new_ps;
 }
@@ -96,8 +96,7 @@ int add_st_a(stack_a *const ps, int *const n, const int mode, long int *const ad
 	void *value;
 	long int start; // variable for start of timer
 	if (mode == MANUAL_MODE)
-		printf("Введите адрес в виде шестнадцатиричного числа"
-			   "\n(помните, что адрес должен быть в пределах от 0 до 0xFFFFFFFF):\n");
+		printf("Введите адрес в виде шестнадцатиричного числа\n(помните, что адрес должен быть в пределах от 0 до 0xFFFFFFFF):\n");
 	for (int i = 0; i < *n; i++)
 	{
 		if (mode == MANUAL_MODE)
@@ -108,7 +107,7 @@ int add_st_a(stack_a *const ps, int *const n, const int mode, long int *const ad
 			return READ_ERROR;
 		}
 		//printf("%lli", buf);
-		value = (void *)buf;
+		value = (void *) buf;
 		//printf("%p", value);
 		// the iteration variable shows on which size we are at the moment
 		// iteration = ps->last - ps->data + 1;

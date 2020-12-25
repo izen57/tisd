@@ -23,7 +23,7 @@ int main(void)
 {
 	setbuf(stdout, NULL);
 	// init array with free zones
-	array_d *free_zones = (array_d *)malloc(sizeof(array_d));
+	array_d *free_zones = (array_d *) malloc(sizeof(array_d));
 	if (!free_zones)
 		return ALLOCATION_ERROR;
 	free_zones->data = malloc(sizeof(void *) * INIT_SIZE_FREE_ZONES);
